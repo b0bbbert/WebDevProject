@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Bobby Zhang">
+  <meta name="keywords" content="Carnegie Mellon University, Resume">
+  <meta name="description" content="Web Project for CMU 67250">
+
+  <title> Bobby Zhang&#39;s Website </title>
+
+  <link rel="stylesheet" media="all" type="text/css" href="css/styles.css" />
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"> </script>
+  <script type="text/javascript" src="js/scripts.js"> </script>
+  <script src="http://code.highcharts.com/highcharts.js"> </script>
+  <script src="http://code.highcharts.com/modules/exporting.js"> </script>
+
+  <!Highcharts initialization>
+  <script type="text/javascript">
+    $(function() {
+      $("#container-graph").highcharts({
+
+        title: {
+            text: 'Weekly Workload by Month'
+        },
+
+        subtitle: {
+            text: 'Hours of week of work from 2015 - 2018'
+        },
+
+        yAxis: {
+            title: {
+                text: 'Average hours worked each week'
+            }
+        },
+
+        xAxis: {
+          title: {
+            text: "Months"
+          },
+          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        },
+
+        tooltip: {
+          valueSuffix: " hours per week (on average)"
+        },
+
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: '2015',
+            data: [3, 4, 4, 5, 4, 3, 3, 4, 4, 4, 5, 6]
+        }, {
+            name: '2016',
+            data: [5, 5, 6, 7, 6, 4, 3, 4, 5, 6, 7, 7]
+        }, {
+            name: '2017',
+            data: [5, 7, 7, 8, 6, 4, 5, 5, 7, 9, 9, 9]
+        }, {
+            name: '2018',
+            data: [7, 8, 7, 7, 6, 3, 3, 6, 9, 9, 10, 11]
+        }],
+          });
+        });
+  </script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="top_row">
+      <header>
+        <h1> Bobby Zhang </h1>
+        <h2> Carnegie Mellon University, Information Systems Undergraduate </h2>
+      </header>
+
+      <nav>
+        <a href="index.html"> About </a>
+        <a href="projects.html"> Projects </a>
+        <a class="selected" href="contact.html"> Contact </a>
+      </nav>
+    </div>
+
+    <div id="content">
+      <h3> Contact </h3>
+
+      <p> Please use the below map to find me </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.405342483446!2d-79.94556118526579!3d40.44416467936196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f2218bddc99f%3A0xeea6ccadbf7b721e!2sWarner+Hall%2C+5000+Forbes+Ave%2C+Pittsburgh%2C+PA+15213!5e0!3m2!1sen!2sus!4v1520709767205" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+      <p> Please check when I'm free. </p>
+      <div id="container-graph"> </div>
+
+      <form onsubmit="return validate()">
+        <fieldset>
+          <legend> Tell me more about yourself... </legend>
+          <label> Name: </label>
+          </br>
+          <input name="name" type="text" size="20" maxlength="250" value="Your Name">
+          <br/> <br/>
+          <label> Your date of birth: </label>
+          </br>
+          <input name="date_of_birth" type="date" required id="DoB">
+        </fieldset>
+
+        <fieldset>
+          <legend> Tell me about your preferences... </legend>
+          <label> Your favorite flower color: </label>
+        </br>
+          <input name="fav_flower_color" type="color">
+          <br/> <br/>
+          <label> Message: </label>
+          </br>
+          <textarea name="message" rows="10" cols="50" maxlength="1000"> </textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend> Let's stay in touch... </legend>
+          <label> How did you find about me? </label>
+          <select name="find_out">
+            <option value="google"> Google </option>
+            <option value="news"> News article </option>
+            <option value="friend"> Friend </option>
+            <option value="other"> Other </option>
+          </select>
+          <br/> <br/>
+          <label> Please indicate if you want to recieve news updates via email </label>
+          </br>
+          <input type="checkbox" name="update" value="go_for_update"> Yes, Please update me! </input>
+          <br/> <br/>
+          <label> Please provide your email address </label>
+          </br>
+          <input type="email" name="email" required placeholder="abc@def.com">
+          <br/> <br/>
+          <label> Please provide your phone number with no dashes or spaces</label>
+          </br>
+          <input type="text" id="phone" name="phone">
+          <br/> <br/>
+          <label> Choose a password </label>
+          </br>
+          <input type="text" name="password" maxlength="20">
+        </fieldset>
+
+        <fieldset>
+          <input type="image" src="images/submit.png" alt="submit">
+        </fieldset>
+
+      </form>
+    </div>
+
+
+
+    <div id="sidebar">
+      <h3> Find Me </h3>
+      Bobby Zhang <br/>
+      <a href="http://www.cmu.edu" target="_blank"> Carnegie Mellon University </a> <br/>
+      5000 Forbes Avenue <br/>
+      Pittsburgh, PA 15213 <br/>
+      669-246-0367 (c)<br/>
+      <a href="mailto:robertz1@andrew.cmu.edu"><img src="images/email.png"></a>
+      <a href="https://www.linkedin.com/in/bobby-z-36869610a/"><img src="images/linkedin.png"></a>
+      <a href="https://www.facebook.com/bobby.zhang.3705"><img src="images/facebook.png"></a>
+    </div>
+
+    <footer>
+      <hr/>
+      &copy; Bobby Zhang 2018 <br/>
+      <a href="mailto:robertz1@andrew.cmu.edu"> Email Me! </a>
+      <a href="https://www.cmu.edu/" target="_blank"> Carnegie Mellon University </a>
+    </footer>
+  </div>
+</body>
+
+</html>
